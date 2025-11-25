@@ -3,7 +3,9 @@
 ---
 
 # moss
-A header-only C++ utility stack.
+My header-only C++ utility stack.
+
+Contains both self-created utilities and 3rd party utilities that I think are worth having on hand. Licenses for 3rd party tools are kept under `/licenses`. Tools created by me are contained within the `moss::` namespace.
 
 ## `moss/timer.h`
 
@@ -15,3 +17,7 @@ A header-only C++ utility stack.
 | moss::timer::rolling | The same as a statistic timer except samples are always unlimited and are automatically purged past a given time limit. |
 
 ## `moss/fileio.h`
+
+# third party
+
+## `moss/boost_unordered.hpp` https://github.com/MikePopoloski/boost_unordered
