@@ -199,6 +199,8 @@
 #ifndef BOOST_FUNCTIONAL_HASH_FWD_HPP
 #define BOOST_FUNCTIONAL_HASH_FWD_HPP
 
+namespace daedalus {
+
 namespace boost
 {
 
@@ -12519,5 +12521,7 @@ namespace boost {
 
   } // namespace unordered
 } // namespace boost
+
+} // namespace daedalus
 
 #endif

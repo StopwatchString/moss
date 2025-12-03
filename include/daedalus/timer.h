@@ -1,10 +1,10 @@
-#ifndef MOSS_TIMER_H
-#define MOSS_TIMER_H
+#ifndef DAEDALUS_TIMER_H
+#define DAEDALUS_TIMER_H
 
 #include <chrono>
 #include <deque>
 
-namespace moss {
+namespace daedalus {
 namespace timer {
 
     static constexpr double NANOSECONDS_PER_MICROSECOND = 1'000.0;
@@ -88,31 +88,6 @@ public:
 
 private:
     std::chrono::steady_clock::time_point start{};
-};
-
-template <double _Seconds>
-requires (_Seconds > 0.0)
-class Rolling
-{
-public:
-
-
-    Rolling(const Rolling&) = default;
-    Rolling(Rolling&&) = default;
-    Rolling& operator=(const Rolling&) = default;
-    Rolling& operator=(Rolling&&) = default;
-
-private:
-    void trim() {
-        const std::chrono::steady_clock::time_point now = std::chrono::steady_clock::now();
-        const auto cutoff = now - std::chrono::duration<double>(_Seconds);
-
-        while (((now - samples.front().first).count() / NANOSECONDS_PER_SECOND) > _Seconds) {
-            samples.pop_front();
-        }
-    }
-
-    std::deque<std::pair<std::chrono::steady_clock::time_point, double>> samples;
 };
 
 } // end timer
