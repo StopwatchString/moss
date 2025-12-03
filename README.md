@@ -1,4 +1,4 @@
-![daedalus](./daedalus.jpg)
+![daedalus](./daedalus.png)
 
 ---
 
