@@ -18,4 +18,5 @@ Licenses for 3rd party tools are kept under `/licenses`. Everything in the repo 
 
 # third party
 
-## [`daedalus/boost_unordered.hpp`](https://github.com/MikePopoloski/boost_unordered)
+## [`daedalus/thirdparty/boost_unordered.hpp`](https://github.com/MikePopoloski/boost_unordered)
+A very fast flat-map implementation provided boost.

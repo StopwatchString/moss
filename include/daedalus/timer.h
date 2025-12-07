@@ -2,18 +2,18 @@
 #define DAEDALUS_TIMER_H
 
 #include <chrono>
-#include <deque>
 
-namespace daedalus {
-namespace timer {
-
-    static constexpr double NANOSECONDS_PER_MICROSECOND = 1'000.0;
-    static constexpr double NANOSECONDS_PER_MILLISECOND = 1'000'000.0;
-    static constexpr double NANOSECONDS_PER_SECOND = 1'000'000'000.0;
+namespace daedalus
+{
+namespace timer
+{
+static constexpr double NANOSECONDS_PER_MICROSECOND = 1'000.0;
+static constexpr double NANOSECONDS_PER_MILLISECOND = 1'000'000.0;
+static constexpr double NANOSECONDS_PER_SECOND = 1'000'000'000.0;
 
 class Immutable
 {
-public:
+  public:
     Immutable()
     {
         start = std::chrono::steady_clock::now();
@@ -39,18 +39,18 @@ public:
         return (std::chrono::steady_clock::now() - start).count();
     }
 
-    Immutable(const Immutable& ) = default;
-    Immutable(Immutable&& ) = default;
-    Immutable& operator=(const Immutable &) = default;
-    Immutable& operator=(Immutable &&) = default;
+    Immutable(const Immutable &) = default;
+    Immutable(Immutable &&) = default;
+    Immutable &operator=(const Immutable &) = default;
+    Immutable &operator=(Immutable &&) = default;
 
-private:
+  private:
     std::chrono::steady_clock::time_point start{};
 };
 
 class Resettable
 {
-public:
+  public:
     Resettable()
     {
         start = std::chrono::steady_clock::now();
@@ -81,16 +81,16 @@ public:
         return (std::chrono::steady_clock::now() - start).count();
     }
 
-    Resettable(const Resettable&) = default;
-    Resettable(Resettable&&) = default;
-    Resettable& operator=(const Resettable&) = default;
-    Resettable& operator=(Resettable&&) = default;
+    Resettable(const Resettable &) = default;
+    Resettable(Resettable &&) = default;
+    Resettable &operator=(const Resettable &) = default;
+    Resettable &operator=(Resettable &&) = default;
 
-private:
+  private:
     std::chrono::steady_clock::time_point start{};
 };
 
-} // end timer
-} // end moss
+} // namespace timer
+} // namespace daedalus
 
 #endif
